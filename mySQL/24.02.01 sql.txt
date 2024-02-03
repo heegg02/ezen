@@ -1,0 +1,37 @@
+SQL문
+select : 조회, 원하는 데이터를 가져와 주는 기본적인 쿼리문
+ex) select 열이름 from 테이블이름 where 조건(조회할 열이름 비교연사자 값)
+
+insert : 삽입, 
+ex) insert into 테이블명(열이름, 열이름, ...) values(값1, 값2, ...);
+
+비교연산자
+>, >=, <, <=
+=, !=, <=>, <> 
+
+?
+and, or
+
+mysql은 데이터의 대소문자 구분 X, oracle 은 데이터의 대소문자 구분 O
+
+테이블 복사본 만들기
+create table 새테이블명(select 복사할 열.... from 원본테이블)
+
+
+새테이블 만들기
+create table 새테이블명(필드명 타입, 필드명 타입, 필드명 타입, 필드명 타입...);
+create table producttbl(pcode CHAR(6), pname VARCHAR(20), amount int, ...)
+
+select 그룹열, sum(합을 구할 열) from 테이블명 group by 그룹열;
+select a, sum(amount) from producttbl group by a;
+
+sum(합), avg(평균), max(최대), min(최소), count(개수)
+
+group by 절 : 필요한 열을 그룹을 묶어서 집계 함수(sum, avg....)를 통해 결과를 표출
+having 절 : 그룹에 제한을 두는 것을 말함.
+
+SQL문의 종류
+DML(데이터 조작 언어) : 선택(select), 삽입(insert), 수정(update), 삭제(delete)
+DDL(데이터 정의 언어) : 생성(create), 삭제(drop), 변경(alter)
+DCL(데이터 제어 언어) : 권한 부여(grant), 권한 박탈(revoke)
+

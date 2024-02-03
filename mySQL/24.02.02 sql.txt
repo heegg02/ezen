@@ -1,0 +1,101 @@
+update 테이블명 set 열이름 = 값, 열이름 = 값, ... where 조건;
+주의) update 사용시 where 절대 사용!!
+ 
+commit(작업 확정), rollback(작업 초기화)
+
+delete from 테이블명 where 조건;
+
+datatype 
+bigint() : 8byte > int() 4byte
+
+실수
+flort 4byte
+double, real : 8byte 기능 같음
+
+문자
+char, varchar
+
+날짜
+date, datetime
+
+내장 함수
+select if(조건, 참, 거짓) 
+ex) select if(10>20, '참입니다.', '거짓입니다.')
+select ifnull(null, 'null입니다.')
+
+select case 값
+        when 값 then 출력내용
+        when 값 then 출력내용
+        when 값 then 출력내용
+        else 출력내용
+        end as 출력내용;
+ex)
+select case 1
+        when 1 then 'vip회원'
+        when 2 then '우수회원'
+        when 3 then '일반회원'
+        else '비회원'
+        end as '회원정보';
+
+length(문자열) : length는 문자열의 길이를 출력
+
+concat(문자열1, 문자열2) : concat는 문자데이터를 합
+
+elt(1, 문자열1, 문자열2, 문자열3) : elt는 1 번에 있는 문자열1 출력
+
+field(찾는문자열, 문자열1, 문자열2, 문자열3) : field는 찾는문자열과 같은 문자를 찾아 해당 문자의 순서(위치)를 출력
+
+format(avg(salary), 2) :
+
+left(문자열, 값) : 문자의 왼쪽부터 값만큼 출력
+right(문자열, 값) : 문자의 오른쪽부터 값만큼 출력
+
+trim(양측에 공백을 포함한 문자열) : 양측에 공백을 포함한 문자열에서 양측의 공백을 제거
+ltrim(좌측에 공백을 포함한 문자열) : 좌측에 공백을 포함한 문자열에서 좌측의 공백을 제거
+rtrim(우측에 공백을 포함한 문자열) : 우측에 공백을 포함한 문자열에서 우측의 공백을 제거
+
+repeat(문자열, 값) : 문자열을 값 만큼 반복하여 출력
+
+replace(문자열, 찾을문자, 바꿀문자) : 문자열에서 찾을문자를 찾아 
+
+reverse(문자열) : 문자열의 문자 순서 뒤집는다
+
+substring(문자열, , ) : 
+
+substring_index(문자열 , 찾을문자, 문자위치) :
+
+lower(문자열) : 문자열의 대문자를 소문자로 변경
+upper(문자열) : 문자열의 소문자를 대문자로 변경
+
+ads(값) : 값의 절대값
+
+ceiling(값) : 값의 올림
+floor(값) : 값의 내림
+round(값) : 값의 반올림
+
+mod(값, 값2) : 값 나누기 값2 의 나머지
+
+pow(값, 값2) : 값^값2, 거듭제곱
+
+rand() : 0~1의 난수
+
+truncate(실수값, 값) : 실수값에서 값이하의 수 버림
+
+adddate('2024-01-02', interval 1 month) : 지정 날짜의 한달 뒤 날짜 출력
+subdate('2024-01-02', interval 1 month) : 저정 날짜의 한달 이전 날짜 출력
+
+curdate() : 현재 날짜 ex) 2000-01-01
+sysdate(), now() : 현재 날짜 ex) 2000-01-01 00:00:00
+date(날짜값) : 날짜값에서 년, 월, 일을 추출하여 출력
+time(날짜값) : 날짜값에서 시, 분, 초를 추출하여 출력
+datediff(날짜값, 날짜값2) : 날짜값 - 날짜값
+last_day(날짜값) : 날짜값에 마지막 날
+makedate(년도값, 값) : 년도값부터 값일이 지난 날짜값
+quarter(날짜값) : 해당 날짜값의 분기
+time_to_sec(날짜값) : 해당 날짜값에서 지난 초
+
+join : 두 개 이상의 테이블을 묶어서 하나의 결과로 만들어 내는 것
+
+selete 열이름.. from 테이블명1 inner join 테이블명2 on  조인조건 where 검색조건;
+
+selete 열이름.. from 테이블명1 inner join 테이블명2 on 조인조건 inner join 테이블명3 on 조인조건 where 검색조건;
