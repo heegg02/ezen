@@ -1,0 +1,66 @@
+drop view 뷰명
+
+with check option : 해당 view 에 보여지는 조건에 해당하는 데이터만 조작 가능
+
+index : 성능 향상, 
+index 사용 경우 (사용하지 말아야 하는 경우)
+1. 테이블의 행의 수가 많을 때 (행의 수가 적을 때)
+2. where 문의 해당 컬럼이 많이 사용될 때 (컬럼이 자주 사용되지 않을 때)
+3. 검색 결과가 데이터의  2 ~ 4 % 일 때 (검색 결과가 전체의 10~15% 일 때)
+4. join에 자주 사용하는 컬럼이나 NULL을 포함하는 컬럼이 많을 때 (테이블의 DML 작업이 많을때 (입력, 수정, 삭제))
+
+create index 생성할 인덱스명 on 테이블명(필드명)
+
+drop index 인덱스명 on 테이블명
+
+SQL 프로그래밍 
+delimiter$$
+create procedure 프로시저명()
+begin
+	sql 프로그래밍..
+end $$
+delimiter;
+
+프로시저 호출
+call 프로시저명()
+
+변수선언
+declare 변수명 변수타입()
+
+초기값 할당
+set 변수명 값
+
+if문 작성
+if 조건 then
+	수행할 내용;
+elseif 조건 then
+	수행할 내용;
+else
+	수행할 내용;
+end if;
+
+case문 작성
+case
+  when 조건 then
+     수행내용
+  when 조건 then
+    수행내용	
+  else
+     수행내용
+end case;
+
+while 문 작성
+while () do
+  수행할 내용..
+end while;
+
+function 함수 작성 : 반드시 return 값이 있어야함.
+delimiter $$
+create function 함수명(매개변수)
+	returns 반환형식
+begin
+	sql 프로그래밍;
+	return 반환값;
+end $$
+delimiter ;
+

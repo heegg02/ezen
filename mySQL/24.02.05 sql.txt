@@ -1,0 +1,21 @@
+mySQL이 안될 경우
+윈도우 검색 > 서비스 > MySQL82 > 실행
+Power Shell(관리자) > cmd > mysql -u root -p
+
+Foreign Key : 참조무결성 (테이블과 테이블 사의 주종 관계 설정을 위한 제약조건) 
+
+inner join : 조인조건에 만족하는 행만 출력
+outer join : 조인조건에 만족되지 않는 행까지도 포함하여 출력
+
+cross join : 상호조인, 카디시안 곱(cartesian Product), 한쪽 테이블의 모든 행들과 다른 쪽 테이블의 모든 행을 조인
+
+제약조건
+primary key : 필수 값, 중복x
+notnull : 필수 값
+unique : 중복x
+foreign key : 참조무결성
+check : 데이터 입력시 조건
+default : 아무 값이 없을 경우 임의 값
+
+view 뷰
+create view 뷰명 as select 필드명 from 테이블명;
