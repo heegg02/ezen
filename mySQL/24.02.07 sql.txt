@@ -1,0 +1,9 @@
+트리거문 작성법
+delimiter //
+create trigger 트리거명
+    after | before 수행쿼리
+    on 트리거 수행테이블명
+begin
+    수행할 쿼리작업
+end //
+delimiter ; 
